@@ -1,10 +1,10 @@
-const TodoListModel = require('../models/todoListModel');
+const TodoModel = require('../models/todoModel');
 
 describe('TodoListModel', () => {
   let model;
 
   beforeEach(() => {
-    model = new TodoListModel();
+    model = new TodoModel();
   });
 
   it('returns an empty list of notes to the todo list', () => {

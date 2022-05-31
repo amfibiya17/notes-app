@@ -1,4 +1,4 @@
-class TodoListModel {
+class TodoModel {
   constructor() {
     this.notes = [];
   }
@@ -16,4 +16,4 @@ class TodoListModel {
   }
 }
 
-module.exports = TodoListModel;
+module.exports = TodoModel;

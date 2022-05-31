@@ -1,9 +1,10 @@
-const TodoListModel = require('./models/todoListModel');
+const TodoModel = require('./models/todoModel');
+const TodoView = require('./views/todoView');
 
-const model = new TodoListModel();
-model.addNote('Renew spotify subscription');
-model.addNote('Buy soya milk');
+const model = new TodoModel();
+model.addNote('This is an example note');
 
-console.log(model.getNotes());
+const view = new TodoView(model);
+view.displayNotes();
 
 console.log('Hello!');

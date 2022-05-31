@@ -4,10 +4,10 @@
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
-  // src/models/todoListModel.js
-  var require_todoListModel = __commonJS({
-    "src/models/todoListModel.js"(exports, module) {
-      var TodoListModel2 = class {
+  // src/models/todoModel.js
+  var require_todoModel = __commonJS({
+    "src/models/todoModel.js"(exports, module) {
+      var TodoModel2 = class {
         constructor() {
           this.notes = [];
         }
@@ -21,15 +21,38 @@
           this.notes = [];
         }
       };
-      module.exports = TodoListModel2;
+      module.exports = TodoModel2;
+    }
+  });
+
+  // src/views/todoView.js
+  var require_todoView = __commonJS({
+    "src/views/todoView.js"(exports, module) {
+      var TodoView2 = class {
+        constructor(model2) {
+          this.model = model2;
+          this.mainContainerEL = document.querySelector("#main-container");
+        }
+        displayNotes() {
+          const notes = this.model.getNotes();
+          notes.forEach((note) => {
+            const noteEl = document.createElement("div");
+            noteEl.innerText = note;
+            noteEl.className = "note";
+            this.mainContainerEL.append(noteEl);
+          });
+        }
+      };
+      module.exports = TodoView2;
     }
   });
 
   // src/index.js
-  var TodoListModel = require_todoListModel();
-  var model = new TodoListModel();
-  model.addNote("Renew spotify subscription");
-  model.addNote("Buy soya milk");
-  console.log(model.getNotes());
+  var TodoModel = require_todoModel();
+  var TodoView = require_todoView();
+  var model = new TodoModel();
+  model.addNote("This is an example note");
+  var view = new TodoView(model);
+  view.displayNotes();
   console.log("Hello!");
 })();
