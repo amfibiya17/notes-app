@@ -3,6 +3,10 @@ class TodoModel {
     this.notes = [];
   }
 
+  setNotes(notes) {
+    this.notes = notes;
+  }
+
   getNotes() {
     return this.notes;
   }
