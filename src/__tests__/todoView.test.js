@@ -40,7 +40,6 @@ describe('Notes view', () => {
     expect(document.querySelectorAll('div.note')[0].innerText).toEqual(
       'Hello!'
     );
-    expect(document.querySelector('#message-input')).toEqual('');
   });
 
   it('clears the list of previous notes before displaying', () => {

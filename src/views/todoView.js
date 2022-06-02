@@ -16,6 +16,7 @@ class TodoView {
   addNewNote(newNote) {
     this.model.addNote(newNote);
     this.displayNotes();
+    setTimeout(() => (document.querySelector('#message-input').value = ''), 0);
   }
 
   displayNotes() {
@@ -24,8 +25,6 @@ class TodoView {
     });
 
     const notes = this.model.getNotes();
-
-    document.querySelector('#message-input').value = ''; // hasn't been tested
 
     notes.forEach((note) => {
       const noteEl = document.createElement('div');
