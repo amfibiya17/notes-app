@@ -8,7 +8,7 @@
   var require_todoApi = __commonJS({
     "src/models/todoApi.js"(exports, module) {
       var TodoApi2 = class {
-        constructor(url = "http://localhost:3000/notes") {
+        constructor(url = "https://todo--list--challenge.herokuapp.com/notes") {
           this.url = url;
         }
         loadNotes(callback, errorCallBack) {
@@ -122,5 +122,5 @@
   }, () => {
     view.displayError();
   });
-  console.log("Hello!");
+  console.log("Hello!!");
 })();

@@ -1,5 +1,5 @@
 class TodoApi {
-  constructor(url = 'http://localhost:3000/notes') {
+  constructor(url = 'https://todo--list--challenge.herokuapp.com/notes') {
     this.url = url;
   }
 

@@ -5,7 +5,6 @@ const TodoView = require('./views/todoView');
 const api = new TodoApi();
 
 const model = new TodoModel();
-// model.addNote('This is an example note');
 
 const view = new TodoView(model, api);
 view.displayNotes();
@@ -20,4 +19,4 @@ api.loadNotes(
   }
 );
 
-console.log('Hello!');
+console.log('Hello!!');

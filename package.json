@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ./src/index.js --bundle  --outfile=bundle.js",
     "start": "node server.js"
   },
   "keywords": [],
