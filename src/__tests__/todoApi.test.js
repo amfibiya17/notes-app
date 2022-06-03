@@ -1,4 +1,3 @@
-const { create } = require('domain');
 const TodoApi = require('../models/todoApi');
 
 require('jest-fetch-mock').enableMocks();
