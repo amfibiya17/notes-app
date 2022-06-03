@@ -4,9 +4,10 @@
 ---
 
 - This web app gives the user the ability to add To Do notes
-- The user can add as much notes as they would like
-- This web app displays the list of user's notes
-- This web app can reset all the notes which user added earlier
+- The user can add as many notes as they would like
+- This web app displays the list of the user's notes
+- This web app can print the the notes which the user added earlier
+- This web app can reset all the notes which the user added earlier
 
 ---
 
