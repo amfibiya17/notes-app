@@ -11,9 +11,11 @@
         constructor(url = "http://localhost:3000/notes") {
           this.url = url;
         }
-        loadNotes(callback) {
+        loadNotes(callback, errorCallBack) {
           fetch(this.url).then((response) => response.json()).then((data) => {
             callback(data);
+          }).catch((error) => {
+            errorCallBack();
           });
         }
         createNote(note) {
@@ -85,6 +87,12 @@
             this.mainContainerEL.append(noteEl);
           });
         }
+        displayError() {
+          const errorEl = document.createElement("div");
+          errorEl.innerText = "Oops, something went wrong!";
+          errorEl.className = "error";
+          this.mainContainerEL.append(errorEl);
+        }
       };
       module.exports = TodoView2;
     }
@@ -96,12 +104,13 @@
   var TodoView = require_todoView();
   var api = new TodoApi();
   var model = new TodoModel();
-  model.addNote("This is an example note");
   var view = new TodoView(model, api);
   view.displayNotes();
   api.loadNotes((notes) => {
     model.setNotes(notes);
     view.displayNotes();
+  }, () => {
+    view.displayError();
   });
   console.log("Hello!");
 })();

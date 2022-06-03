@@ -3,11 +3,14 @@ class TodoApi {
     this.url = url;
   }
 
-  loadNotes(callback) {
+  loadNotes(callback, errorCallBack) {
     fetch(this.url)
       .then((response) => response.json())
       .then((data) => {
         callback(data);
+      })
+      .catch((error) => {
+        errorCallBack();
       });
   }
 

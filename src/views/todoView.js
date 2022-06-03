@@ -37,6 +37,13 @@ class TodoView {
       this.mainContainerEL.append(noteEl);
     });
   }
+
+  displayError() {
+    const errorEl = document.createElement('div');
+    errorEl.innerText = 'Oops, something went wrong!';
+    errorEl.className = 'error';
+    this.mainContainerEL.append(errorEl);
+  }
 }
 
 module.exports = TodoView;
