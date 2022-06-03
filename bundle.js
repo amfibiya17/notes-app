@@ -25,6 +25,11 @@
             body: JSON.stringify({ content: note })
           });
         }
+        resetNotes() {
+          fetch(this.url, {
+            method: "DELETE"
+          });
+        }
       };
       module.exports = TodoApi2;
     }
@@ -65,6 +70,11 @@
           document.querySelector("#add-note-button").addEventListener("click", () => {
             const newNote = document.querySelector("#message-input").value;
             this.addNewNote(newNote);
+          });
+          document.querySelector("#reset-all-notes-button").addEventListener("click", () => {
+            this.api.resetNotes();
+            this.model.reset();
+            this.displayNotes();
           });
         }
         addNewNote(newNote) {

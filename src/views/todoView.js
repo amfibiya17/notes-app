@@ -12,6 +12,14 @@ class TodoView {
       const newNote = document.querySelector('#message-input').value;
       this.addNewNote(newNote);
     });
+
+    document
+      .querySelector('#reset-all-notes-button')
+      .addEventListener('click', () => {
+        this.api.resetNotes();
+        this.model.reset();
+        this.displayNotes();
+      });
   }
 
   addNewNote(newNote) {

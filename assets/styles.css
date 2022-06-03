@@ -21,7 +21,7 @@ body {
 }
 
 input[type=text] {
-  width: 80%;
+  width: 60%;
   background: #fefefe;
   border-radius: 4px;
   padding: 10px 8px;

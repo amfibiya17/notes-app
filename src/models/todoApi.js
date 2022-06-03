@@ -21,5 +21,11 @@ class TodoApi {
       body: JSON.stringify({ content: note }),
     });
   }
+
+  resetNotes() {
+    fetch(this.url, {
+      method: 'DELETE',
+    });
+  }
 }
 module.exports = TodoApi;
