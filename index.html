@@ -10,18 +10,27 @@
   </head>
 
   <body>
-    <h1>To Do List</h1>
+    <div class="main-div">
+      <div class="left">
+        <h1>To Do List</h1>
+      </div>
 
-    <input type="text" id="message-input" />
+      <div class="right noPrint">
+        <a href="whatever.htm" onClick="window.print();return false"><img class="print" src="https://i.postimg.cc/HL11SFrZ/Web-7.jpg"></a>
+      </div>
 
-    <button id="add-note-button">Add note</button>
-    <button id="reset-all-notes-button">Reset notes</button>
+    </div>
+
+    <input type="text" id="message-input" class="noPrint" />
+
+    <button id="add-note-button" type="button" class="noPrint">Add note</button>
+    <button id="reset-all-notes-button" type="button" class="noPrint">Reset notes</button>
 
     <div id="main-container">
     </div>
 
-    <div id="footer" class="contacts">
-      <a class="icons" href="https://www.linkedin.com/in/yaroslava-yates-629517221/" target="_blank">
+    <div id="footer" class="contacts noPrint">
+      <a class="icons noPrint" href="https://www.linkedin.com/in/yaroslava-yates-629517221/" target="_blank">
           <img class="icons" src="https://i.postimg.cc/CKhnxt4D/link.png" alt="Linkedin">
       </a>
     </div>

@@ -2,6 +2,12 @@
   border: 1px solid red;
 } */
 
+@media print {
+  .noPrint{
+    display:none;
+  }
+}
+
 h1 {
   line-height: 48px;
   font-size: 34px;
@@ -73,4 +79,27 @@ button {
   left: 5px;
   display: flex;
   position: fixed;
+}
+
+.print {
+  padding: 10px;
+  width: 40px;
+  align-items: right;
+}
+
+.left {
+  width: 350px;
+}
+
+.right {
+  width: 350px;
+  text-align: right;
+  margin-top: 20px;
+
+}
+
+.main-div {
+  display: flex;
+  width: 700px;
+  overflow: hidden;
 }
