@@ -1,4 +1,20 @@
-# TodoList web app
+# To Do List
+## link  --> [todo--list--challenge](https://todo--list--challenge.herokuapp.com/) <-- link
+
+---
+
+- This web app gives the user the ability to add To Do notes
+- The user can add as much notes as they would like
+- This web app displays the list of user's notes
+- This web app can reset all the notes which user added earlier
+
+---
+
+## How to install the program
+
+- Clone this repository `git clone https://github.com/amfibiya17/notes-app.git`
+
+---
 
 User stories:
 ```
