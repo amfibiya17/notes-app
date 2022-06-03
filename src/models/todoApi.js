@@ -10,5 +10,13 @@ class TodoApi {
         callback(data);
       });
   }
+
+  createNote(note) {
+    fetch(this.url, {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify({ content: note }),
+    });
+  }
 }
 module.exports = TodoApi;

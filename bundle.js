@@ -16,6 +16,13 @@
             callback(data);
           });
         }
+        createNote(note) {
+          fetch(this.url, {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ content: note })
+          });
+        }
       };
       module.exports = TodoApi2;
     }
@@ -49,8 +56,9 @@
   var require_todoView = __commonJS({
     "src/views/todoView.js"(exports, module) {
       var TodoView2 = class {
-        constructor(model2) {
+        constructor(model2, api2) {
           this.model = model2;
+          this.api = api2;
           this.mainContainerEL = document.querySelector("#main-container");
           document.querySelector("#add-note-button").addEventListener("click", () => {
             const newNote = document.querySelector("#message-input").value;
@@ -60,7 +68,10 @@
         addNewNote(newNote) {
           this.model.addNote(newNote);
           this.displayNotes();
-          setTimeout(() => document.querySelector("#message-input").value = "", 0);
+          setTimeout(() => {
+            document.querySelector("#message-input").value = "";
+            this.api.createNote(newNote);
+          }, 0);
         }
         displayNotes() {
           document.querySelectorAll(".note").forEach((element) => {

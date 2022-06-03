@@ -3,8 +3,9 @@
 // const model = new TodoModel();
 
 class TodoView {
-  constructor(model) {
+  constructor(model, api) {
     this.model = model;
+    this.api = api;
     this.mainContainerEL = document.querySelector('#main-container');
 
     document.querySelector('#add-note-button').addEventListener('click', () => {
@@ -16,7 +17,10 @@ class TodoView {
   addNewNote(newNote) {
     this.model.addNote(newNote);
     this.displayNotes();
-    setTimeout(() => (document.querySelector('#message-input').value = ''), 0);
+    setTimeout(() => {
+      document.querySelector('#message-input').value = '';
+      this.api.createNote(newNote);
+    }, 0);
   }
 
   displayNotes() {
